@@ -1,7 +1,7 @@
 {
     "name": "com.bernique.2d-utils.Runtime",
     "rootNamespace": "",
-    "references": [],
+    "references": ["com.bernique.2d-utils.Toolbox"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
