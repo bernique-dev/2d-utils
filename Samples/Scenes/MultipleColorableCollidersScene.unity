@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 273042789}
   - component: {fileID: 273042788}
+  - component: {fileID: 273042790}
   m_Layer: 0
   m_Name: Collided
   m_TagString: Untagged
@@ -153,41 +154,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayGizmos: 1
-  colliderDataList:
-  - normalColor: {r: 0.846161, g: 0.8784314, b: 0.3529412, a: 1}
-    usedColor: {r: 0.27903074, g: 0.4509804, b: 0.09019607, a: 1}
-    layer:
-      serializedVersion: 2
-      m_Bits: 0
-    isTrigger: 0
-    actions:
-      m_PersistentCalls:
-        m_Calls: []
-    offset: {x: 0, y: 0}
-    size: {x: 1, y: 1}
-  - normalColor: {r: 0.846161, g: 0.8784314, b: 0.3529412, a: 1}
-    usedColor: {r: 0.27903074, g: 0.4509804, b: 0.09019607, a: 1}
-    layer:
-      serializedVersion: 2
-      m_Bits: 0
-    isTrigger: 0
-    actions:
-      m_PersistentCalls:
-        m_Calls: []
-    offset: {x: 0, y: 0}
-    size: {x: 1, y: 1}
-  colliderData:
-    normalColor: {r: 0, g: 0, b: 0, a: 0}
-    usedColor: {r: 0, g: 0, b: 0, a: 0}
-    layer:
-      serializedVersion: 2
-      m_Bits: 0
-    isTrigger: 0
-    actions:
-      m_PersistentCalls:
-        m_Calls: []
-    offset: {x: 0, y: 0}
-    size: {x: 0, y: 0}
+  boxColliders:
+    list:
+    - name: PurpleBox
+      isTrigger: 0
+      normalColor: {r: 0.5943396, g: 0.17661978, b: 0.83137256, a: 1}
+      usedColor: {r: 0, g: 0, b: 0, a: 0}
+      layer:
+        serializedVersion: 2
+        m_Bits: 0
+      colliderActionData:
+        onTriggerEnterActions:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 273042790}
+              m_TargetAssemblyTypeName: Bernique2DUtils.TestCollision, com.bernique.2d-utils.Runtime
+              m_MethodName: Trigger
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onTriggerStayActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onTriggerExitActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onCollisionEnterActions:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 273042790}
+              m_TargetAssemblyTypeName: Bernique2DUtils.TestCollision, com.bernique.2d-utils.Runtime
+              m_MethodName: Collide
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onCollisionStayActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onCollisionExitActions:
+          m_PersistentCalls:
+            m_Calls: []
+      offset: {x: 1, y: 0}
+      size: {x: 1, y: 1}
+  circleColliders:
+    list:
+    - name: RedCircle
+      isTrigger: 1
+      normalColor: {r: 0.8490566, g: 0.29236382, b: 0.29236382, a: 1}
+      usedColor: {r: 0, g: 0, b: 0, a: 0}
+      layer:
+        serializedVersion: 2
+        m_Bits: 0
+      colliderActionData:
+        onTriggerEnterActions:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 273042790}
+              m_TargetAssemblyTypeName: Bernique2DUtils.TestCollision, com.bernique.2d-utils.Runtime
+              m_MethodName: Trigger
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onTriggerStayActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onTriggerExitActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onCollisionEnterActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onCollisionStayActions:
+          m_PersistentCalls:
+            m_Calls: []
+        onCollisionExitActions:
+          m_PersistentCalls:
+            m_Calls: []
+      offset: {x: -1, y: 1}
+      radius: 1
 --- !u!4 &273042789
 Transform:
   m_ObjectHideFlags: 0
@@ -203,6 +265,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &273042790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273042787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c97416d48c030a47960bd2f6033f7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &729635401
 GameObject:
   m_ObjectHideFlags: 0

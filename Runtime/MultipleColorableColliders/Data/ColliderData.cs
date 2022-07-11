@@ -7,6 +7,7 @@ namespace Bernique2DUtils {
     [Serializable]
     public class ColliderData {
 
+        public string name;
 
         public bool isTrigger;
 

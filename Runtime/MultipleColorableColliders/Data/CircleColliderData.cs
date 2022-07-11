@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 
 namespace Bernique2DUtils {
     [Serializable]
-    public class BoxColliderData : ColliderData {
+    public class CircleColliderData : ColliderData {
 
         public Vector2 offset;
-        public Vector2 size = Vector2.one;
+        public float radius = 1;
 
     }
 
