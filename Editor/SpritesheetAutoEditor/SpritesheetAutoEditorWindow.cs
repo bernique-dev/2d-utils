@@ -57,17 +57,26 @@ public class SpritesheetAutoEditorWindow : EditorWindow {
                         for (int idx = 0; idx < suffixes.Length; idx++) {
                             SpriteMetaData spriteMetaData = new SpriteMetaData();
                             spriteMetaData.name = textureName + "_" + suffixes[idx] + (framesNumber > 1 ? "_" + frame : "");
-                            spriteMetaData.alignment = 0;
+                            spriteMetaData.alignment = 9;
+                            spriteMetaData.pivot = pivot;
                             spriteMetaData.rect = new Rect {
                                 x = ((idx % tileSheetDimensions.x) + tileSheetDimensions.x * frame) * tileSize.x,
                                 y = tileSize.y * (3 - (idx / tileSheetDimensions.x)),
                                 width = tileSize.x,
                                 height = tileSize.y,
                             };
-                            spriteMetaData.pivot = pivot;
                             spriteSheet[idx + tilesNumber * frame] = spriteMetaData;
                         }
                     }
+                    textureImporter.spritePivot = pivot;
+
+
+                    TextureImporterSettings texSettings = new TextureImporterSettings();
+                    textureImporter.ReadTextureSettings(texSettings);
+                    texSettings.spriteAlignment = (int)SpriteAlignment.Custom;
+                    textureImporter.SetTextureSettings(texSettings);
+
+                    textureImporter.isReadable = true;
                     textureImporter.spriteImportMode = SpriteImportMode.Multiple;
                     textureImporter.spritePixelsPerUnit = tileSize.x;
                     textureImporter.filterMode = FilterMode.Point;
