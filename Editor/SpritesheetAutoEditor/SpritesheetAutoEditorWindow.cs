@@ -21,6 +21,7 @@ public class SpritesheetAutoEditorWindow : EditorWindow {
     public float maxAnimSpeed = 1;
 
     private Vector2 tileSize = new Vector2(16, 16);
+    private Vector2 pivot = new Vector2(.5f, .5f);
     private int framesNumber = 1;
     private int tilesNumber = 48;
     private Vector2Int tileSheetDimensions = new Vector2Int(12,4);
@@ -46,6 +47,7 @@ public class SpritesheetAutoEditorWindow : EditorWindow {
                 GUILayout.Label("Spritesheet Editor (" + textureName + ")", EditorStyles.boldLabel);
 
                 tileSize = EditorGUILayout.Vector2Field("Tile size", tileSize);
+                pivot = EditorGUILayout.Vector2Field("Pivot", pivot);
                 framesNumber = EditorGUILayout.IntField("Number of frames", framesNumber);
 
                 if (GUILayout.Button("Slice")) {
@@ -62,6 +64,7 @@ public class SpritesheetAutoEditorWindow : EditorWindow {
                                 width = tileSize.x,
                                 height = tileSize.y,
                             };
+                            spriteMetaData.pivot = pivot;
                             spriteSheet[idx + tilesNumber * frame] = spriteMetaData;
                         }
                     }
