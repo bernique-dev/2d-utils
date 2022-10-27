@@ -7,7 +7,6 @@ using UnityEngine.Tilemaps;
 public class InstanceTile : Tile {
 
     public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go) {
-        //Debug.Log(go);
         return base.StartUp(position, tilemap, go);
     }
 
