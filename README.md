@@ -1,4 +1,4 @@
-# 2d-utils (V0.0.3)
+# 2D Utils (V0.0.3)
 
 ## Description
 
