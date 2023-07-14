@@ -52,12 +52,12 @@ namespace Bernique2DUtils {
 #if UNITY_EDITOR
             foreach (BoxColliderData boxColliderData in boxColliders.list) {
                 Handles.color = boxColliderData.normalColor;
-                Handles.DrawSolidRectangleWithOutline(RectUtils.GetRect(transform.position + boxColliderData.offset.GetVector3(), boxColliderData.size), new Color32(0,0,0,0), boxColliderData.normalColor);
+                Handles.DrawSolidRectangleWithOutline(RectUtils.GetRect(transform.position + (Vector3)boxColliderData.offset, boxColliderData.size), new Color32(0,0,0,0), boxColliderData.normalColor);
             }
 
             foreach (CircleColliderData circleColliderData in circleColliders.list) {
                 Handles.color = circleColliderData.normalColor;
-                Handles.DrawWireDisc(transform.position + circleColliderData.offset.GetVector3(), Vector3.forward, circleColliderData.radius);
+                Handles.DrawWireDisc(transform.position + (Vector3)circleColliderData.offset, Vector3.forward, circleColliderData.radius);
             }
 #endif
         }
