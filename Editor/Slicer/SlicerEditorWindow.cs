@@ -89,6 +89,7 @@ public class SlicerEditorWindow : EditorWindow {
             for (int x = 0; x < width; x += spriteSize.x) {
                 for (int y = 0; y < height; y += spriteSize.y) {
                     var spriteRect = new SpriteRect();
+                    spriteRect.name = $"{GetTextureName(texturePath)}_{x}_{y}";
                     spriteRect.alignment = SpriteAlignment.Custom;
                     spriteRect.pivot = pivot;
                     spriteRect.rect = new Rect(x, y, spriteSize.x, spriteSize.y);
@@ -98,9 +99,8 @@ public class SlicerEditorWindow : EditorWindow {
             dataProvider.SetSpriteRects(spriteRects.ToArray());
             dataProvider.Apply();
             textureImporter.SaveAndReimport();
-
-            Debug.Log("Sliced!");
         }
+        Debug.Log("Sliced!");
 
     }
 
