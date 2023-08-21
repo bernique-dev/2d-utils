@@ -1,7 +1,11 @@
 {
     "name": "com.bernique.2d-utils.Editor",
     "rootNamespace": "",
-    "references": ["com.bernique.2d-utils.Runtime", "Unity.2D.Tilemap.Extras"],
+    "references": [
+        "com.bernique.2d-utils.Runtime",
+        "Unity.2D.Tilemap.Extras",
+        "Unity.2D.Sprite.Editor"
+    ],
     "includePlatforms": [
         "Editor"
     ],
